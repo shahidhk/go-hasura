@@ -1,6 +1,6 @@
 # go-hasura
 
-A simple Go client for Hasura
+A simple Go clien for Hasura JSON APIs
 
 ### Installation
 
@@ -9,8 +9,6 @@ go get github.com/shahidhk/go-hasura
 ```
 
 ### Usage
-
-Create a client:
 
 ```go
 // import the packages
