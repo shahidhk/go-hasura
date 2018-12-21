@@ -72,7 +72,7 @@ type PostgresError struct {
 
 // Error returns the error message
 func (e Error) Error() string {
-	return e.Message
+	return e.Err
 }
 
 // RunSQLResponse is the structured response obtained when SQL is executed

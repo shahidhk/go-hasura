@@ -36,7 +36,7 @@ func main() {
     // build a query object
 	q := hasura.Query{
 		Type: "select",
-		Args: Args{
+		Args: hasura.Args{
 			Table: "author",
 			Columns: []string{
 				"id",
