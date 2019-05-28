@@ -14,15 +14,24 @@ type Query struct {
 
 // Args for a query
 type Args struct {
-	SQL       string        `json:"sql,omitempty"`
-	Table     interface{}   `json:"table,omitempty"`
-	Columns   interface{}   `json:"columns,omitempty"`
-	Where     interface{}   `json:"where,omitempty"`
-	OrderBy   interface{}   `json:"order_by,omitempty"`
-	Objects   []interface{} `json:"objects,omitempty"`
-	Limit     int           `json:"limit,omitempty"`
-	Returning []string      `json:"returning,omitempty"`
-	Set       interface{}   `json:"$set,omitempty"`
+	SQL        string        `json:"sql,omitempty"`
+	Table      interface{}   `json:"table,omitempty"`
+	Columns    interface{}   `json:"columns,omitempty"`
+	Where      interface{}   `json:"where,omitempty"`
+	OrderBy    interface{}   `json:"order_by,omitempty"`
+	Objects    []interface{} `json:"objects,omitempty"`
+	Limit      int           `json:"limit,omitempty"`
+	Returning  []string      `json:"returning,omitempty"`
+	Set        interface{}   `json:"$set,omitempty"`
+	OnConflict `json:"on_conflict,omitempty"`
+}
+
+// OnConflict argument
+type OnConflict struct {
+	// action: one of update or ignore
+	Action       string   `json:"action"`
+	Constraint   string   `json:"constraint,omitempty"`
+	ConstraintOn []string `json:"constraint_on,omitempty"`
 }
 
 // Bulk is a query in which multiple queries can be executed.
